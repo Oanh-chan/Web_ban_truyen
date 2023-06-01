@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DeAn.Models.Product>
+@{
+    ViewBag.Title = "ProductList";
+    Layout = "~/Views/Shared/layout01.cshtml";
+}
+
+<div class="container">
+    
+    <div style="border: 3px solid #ff6a00; height: 70px; text-align: center; padding: 15px;">
+        <!-- Đoạn thêm -->
+        @using (Html.BeginForm("ProductList", "Product", FormMethod.Get))
+        {
+            <table>
+                <tr>
+                    <td style="padding-bottom:40px">
+                        Tên Sản phẩm : <input type="text" name="SearchString" />
+                        <input type="submit" value="Tìm kiếm" class="btn btn-warning" />
+                    </td>
+                    <td>
+                        Đơn giá từ : <input type="number" name="min" />
+                        Đến : <input type="number" name="max" />
+                        <input type="submit" value="Tìm giá" class="btn btn-info" />
+                        <hr />
+                    </td>
+                   
+                </tr>
+            </table>
+        }
+        <!--Kết thúc -->
+        <!--     -->
+    </div>
+    <div>
+        <h4 style="text-align:center;font-size:50px;padding-bottom:20px">DANH SÁCH SẢN PHẨM</h4>
+
+        <div class="row">
+
+            @foreach (var sanpham in Model)
+            {
+                <div class="col-md-3 col-sm-6">
+                    <div class="product-grid2">
+                        <div class="product-image2">
+                            <a href="/Truyen/Details/@sanpham.ProductID"><img src="@Url.Content(sanpham.ImagePro)" style="height:300px; width:200px;margin:10px; " /></a>
+                            <ul class="social">
+
+                                <li><a href="~/Login/FormLogin" data-tip="Đặt hàng"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                            <a class="add-to-cart" href="@Url.Action("FormLogin", "Login", new {id = sanpham.ProductID})">ĐẶT MUA</a>
+                        </div>
+                        <div class="product-content">
+                            <a href="/Truyen/Details/@sanpham.ProductID">
+                                <h4 class="card-title" style="text-align: center">@sanpham.NamePro</h4>
+                            </a>
+                            <div class="price">
+                                Giá bán: @sanpham.Price VNĐ
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <hr>
+</div>
+

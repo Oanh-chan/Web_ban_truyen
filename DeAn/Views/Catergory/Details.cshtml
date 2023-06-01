@@ -1,0 +1,29 @@
+﻿@model IEnumerable<DeAn.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin: 10px auto; width: 90%;">
+    <h2 style="text-align:center">DANH SÁCH TRUYỆN NGÔN TÌNH</h2>
+    <hr />
+    <div class="row">
+        @foreach (var sanpham in Model)
+        {
+            <div class="col-lg-4 col-md-6 mb-0-3">
+                <div class="card h-100">
+                    <a href="/Truyen/Details/@sanpham.ProductID"> <img class="card-img-top" src="~/Img-TL-ngontinh/@sanpham.ImagePro" /></a>
+                    <div class="card-body" style="text-align: left">
+                        <a href="/Truyen/Details">
+                            <h4 class="card-title">@sanpham.NamePro</h4>
+                        </a>
+                        <p class="card-title">@sanpham.DecriptionPro</p>
+                        @Html.ActionLink("CHI TIẾT", "Details", new { id = sanpham.ProductID }, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
+

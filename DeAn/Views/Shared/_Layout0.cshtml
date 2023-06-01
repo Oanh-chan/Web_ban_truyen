@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="~/Content/hinh.css" rel="stylesheet" />
+    <link href="~/Content/trangchu0.css" rel="stylesheet" />
+    <script>
+
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="topnav0">
+        <a class="active0" href="~/Home/TrangChu0" style="width:200px; font-size: 30px;">Hamster</a>
+        <div id="myLinks">
+            <a href="#news">News</a>
+
+            <a href="#about">About</a>
+        </div>
+       
+        </div>
+        <div>
+            @RenderBody()
+        </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #777;
+    border-color: #fff
+}
+trong lựa chọn xem trước
+
+body {
+    margin-top: 20px;
+}
+
+.cart-item-thumb {
+    display: block;
+    width: 10rem
+}
+
+    .cart-item-thumb > img {
+        display: block;
+        width: 100%
+    }
+
+.product-card-title > a {
+    color: #222;
+}
+
+.font-weight-semibold {
+    font-weight: 600 !important;
+}
+
+.product-card-title {
+    display: block;
+    margin-bottom: .75rem;
+    padding-bottom: .875rem;
+    border-bottom: 1px dashed #e2e2e2;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.text-muted {
+    color: #888 !important;
+}
+
+.bg-secondary {
+    background-color: #f7f7f7 !important;
+}
+
+.accordion .accordion-heading {
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.font-weight-semibold {
+    font-weight: 600 !important;
+}

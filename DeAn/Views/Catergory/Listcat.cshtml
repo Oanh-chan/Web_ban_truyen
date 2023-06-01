@@ -1,0 +1,14 @@
+﻿@model IEnumerable<DeAn.Models.Category>
+@{
+    ViewBag.Title = "Listcat";
+    Layout = "~/Views/Shared/layout01.cshtml";
+}
+
+<h2>Danh mục loại sản phẩm</h2>
+
+<ul>
+    @foreach(var cat in Model)
+            {
+        <li><a href="#">@cat.NameCate</a></li>
+            }
+</ul>

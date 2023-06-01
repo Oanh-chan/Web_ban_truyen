@@ -1,0 +1,90 @@
+﻿@model DeAn.Models.Customer
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layoutlogin.cshtml";
+    <script src="https://aiax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+    <script src="https://aiax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+    <script src="https://aiax.aspnetcdn.com/ajax/jquery.validate/1.19.1/jquery.validate.js"></script>
+    <script src="https://aiax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.js"></script>
+    <link href="~/Content/dangky0.css" rel="stylesheet" />
+
+}
+
+
+<div class="container-xl px-4 mt-4">
+    <!-- Account page navigation-->
+    <h4 style="padding-top:30px;padding-left:30px;padding-bottom:0px;font-size:30px">ĐĂNG KÝ TÀI KHOẢN</h4>
+    @using (Html.BeginForm("Register", "Login"))
+    {
+        @Html.ValidationSummary(true)
+
+        <hr class="mt-0 mb-4">
+        <div class="row">
+            <div class="col-xl-4" style="padding-top: 70px">
+                <!-- Profile picture card-->
+                <div class="card mb-4 mb-xl-0" >
+
+                    <div class="card-body text-center">
+                        <!-- Profile picture image-->
+                        <img src="~/images/viettelconet-2-1.png" style="padding-top:10px" />
+                        <!-- Profile picture help block-->
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8" style="padding: 50px 50px">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header">THÔNG TIN ĐĂNG KÝ</div>
+                    <div class="card-body">
+                        <form>
+                            <!-- Form Group (username)-->
+                            <div class="mb-3" style="padding-bottom: 10px;">
+                                <label class="small mb-1" for="inputUsername" style="padding-left:10px">Họ Tên</label>
+                                <a style="padding-left:50px"> @Html.TextBoxFor(m => m.NameCus)</a>
+                                <a> @Html.ValidationMessageFor(m => m.NameCus) </a>
+                            </div>
+
+                            <div class="mb-6" style="padding-bottom: 20px;">
+                                <label class="small mb-1" for="inputEmailAddress" style="padding-left:10px">Địa chỉ Email</label>
+                                <a style="padding-left:18px"> @Html.TextBoxFor(m => m.EmailCus)</a>
+                                <a>@Html.ValidationMessageFor(m => m.EmailCus)  </a>
+                            </div>
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-3" style="padding-bottom: 10px;">
+                                <!-- Form Group (phone number)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputPhone" style="padding-left:10px">SĐT</label>
+                                    <a style="padding-left:67px"> @Html.TextBoxFor(m => m.PhoneCus)</a>
+                                    <a>@Html.ValidationMessageFor(m => m.PhoneCus)  </a>
+                                </div>
+                                <!-- Form Group (birthday)-->
+
+                            </div>
+                            <div class="col-md-6" style="padding-bottom: 10px;">
+                                <label class="small mb-1" for="inputOrgName">Mật khẩu</label>
+                                <a style="padding-left:33px">@Html.PasswordFor(m => m.PassCus)</a>
+                                <a>@Html.ValidationMessageFor(m => m.PassCus) </a>
+                            </div>
+                            <div class="mb-6" style="padding-bottom: 20px;">
+                                <!-- Form Group (location)-->
+                                <div class="col-md-6" style="padding-bottom: 20px;padding-top:0px">
+                                    <label class="small mb-1" for="inputLocation">Nhập lại mật khẩu</label>
+                                    <a style="padding-left:0px">@Html.PasswordFor(m => m.ConfirmPassword)</a>
+                                    <a>@Html.ValidationMessageFor(m => m.ConfirmPassword) </a>
+                                </div>
+                            </div>
+                            <!-- Save changes button-->
+                            <div style="padding-left:250px">
+                                <a><input type="submit" class="btn btn-primary" value="Đăng ký" /></a>
+                                <a><input type="reset" class="btn btn-primary" value="Reset" /></a>
+                                <a href="@Url.Action("FormLogin", "Login")" class="btn btn-primary"> Đăng nhập</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    </div>

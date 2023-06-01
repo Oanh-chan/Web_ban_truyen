@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DeAn.Models.Product>
+@{
+    ViewBag.Title = "KQTiemKiem";
+    Layout = "~/Views/Shared/layout01.cshtml";
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="~/Content/hinh.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
+}
+
+<div class="container">
+    <h1 class="h1" style="text-align:center">Danh sách sản phẩm </h1>
+    <hr />
+    <div class="row">
+
+        @foreach (var sanpham in Model)
+        {
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid2">
+                    <div class="product-image2">
+                        <a href="/Truyen/Details/@sanpham.ProductID"><img src="@Url.Content(sanpham.ImagePro)" style="height:300px; width:200px;margin:10px; " /></a>
+                        <ul class="social">
+
+                            <li><a href="~/Login/FormLogin" data-tip="Đặt hàng"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a class="add-to-cart" href="@Url.Action("FormLogin", "Login", new {id = sanpham.ProductID})">ĐẶT MUA</a>
+                    </div>
+                    <div class="product-content">
+                        <a href="/Truyen/Details/@sanpham.ProductID">
+                            <h4 class="card-title" style="text-align: center">@sanpham.NamePro</h4>
+                        </a>
+                        <div class="price">
+                            Giá bán: @sanpham.Price VNĐ
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<hr>
+

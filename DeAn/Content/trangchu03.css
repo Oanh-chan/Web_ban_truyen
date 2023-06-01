@@ -1,0 +1,116 @@
+﻿body {
+}
+/*Product page*/
+#div-pro-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: aliceblue;
+}
+
+.box-pro {
+   
+  
+    height: 370px;
+    width: 230px;
+    margin: 150px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.size-img {
+    height: 1200px;
+    width: 50px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.box-description {
+    height: 120px;
+    width: auto;
+    margin-top: 20px;
+    margin-left: 0px;
+    display: flex;
+    flex-direction:column;
+}
+
+.margin-des {
+
+    margin-left: 0px;
+    display: flex;
+    
+    padding-top: 5px;
+}
+
+.tieude {
+    font-size: 70px;
+    font-family: "Didot";
+    text-align: center;
+}
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.menu {
+    display: flex;
+   
+}
+    .menu li {
+        padding-right: 2.5em;
+        font-size: 20px;
+        
+        left: 10px;
+    }
+.menu li a:hover{
+    color:#8897b6;
+    transition: color  .4s ease-out;
+}
+.menu_down {
+    position: absolute;
+    line-height: 2em;
+    display: flex;
+    opacity: 0;
+    left: 0px;
+    top: 60px;
+    visibility: hidden;
+}
+    .menu_down li {
+        margin: 0px auto;
+        width: 250px;
+        text-align: center;
+        padding: 0px;
+       left: 0px;
+    }
+.menu .menu_link:hover .menu_down {
+    opacity: 1;
+    visibility: visible;
+}
+.menu_child_list {
+    padding: 3rem;
+    border-top: 10px solid;
+    
+}
+.menu_child {
+   margin: 0px auto;
+  background:#ffffff;
+}
+nav{
+    justify-content: space-between;
+    justify-items: center;
+}
+.logo {
+    max-width: 50px;
+    height: auto;
+}
+#header1 {
+    width: auto;
+    height: 50px;
+    background-color:#b6ff00;
+   
+}
+#wrapper1
+{
+    padding-top:5px;
+}

@@ -1,0 +1,62 @@
+﻿@model DeAn.Models.Cart1
+
+@{
+    ViewBag.Title = "ShowToCart";
+    Layout = "~/Views/Shared/_TheloaiLayoutPage1.cshtml";
+}
+
+<h2>Giỏ hàng</h2>
+@if (Model != null)
+{
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Tên sản phẩm</th>
+                            <th> Hình ảnh</th>
+                            <th>Giá tiền</th>
+                            <th>Số lượng</th>
+                            <th>Tổng</th>
+                            <th>Xóa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Model.Items)
+                {
+                    double total =Convert.ToDouble( item._shopping_product.Price.Value * item._shopping_quantity);
+                            <tr style="height:100px">
+                                <td>
+                                    @Html.DisplayFor(model => item._shopping_product.NamePro)
+                                </td>
+                                <td>
+                                    <img src="@Url.Content(item._shopping_product.ImagePro)" style="width: 150px; height: 220px;"/>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => item._shopping_product.Price)
+                                </td>
+                                <td>
+                                    @using (Html.BeginForm("Update_Quantity_Cart", "Cart"))
+                                    {
+                                        <input type="hidden" value="@item._shopping_product.ProductID" name="ID_Product" />
+                                        <input type="number" value="@item._shopping_quantity" name="Quantity" />
+                                        <input type="submit" value="Cập nhật" />
+                                    }
+
+                                </td>
+                                <td>
+                                    Giá: @total
+                                </td>
+                                <td>
+                                    <a href="/Cart/RemoveCart/@item._shopping_product.ProductID">Xóa</a>
+                                </td>
+                            </tr>
+                }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5" style="text-align:right"> Tổng tiền: @Model.Total_Money()</td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+                <a href="@Url.Action("TrangChuchinh", "Home")">Tiếp tục mua hàng</a>
+            }

@@ -1,0 +1,48 @@
+﻿body{
+
+}
+.accordion {
+    background-color: none;
+    color: white;
+   
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0s;
+}
+
+    .active, .accordion:hover {
+        background-color: #ccc;
+    }
+
+.panel {
+    position: absolute;
+    padding: 10px 18px;
+    display: none;
+    background-color: none;
+    overflow: hidden;
+    width:200px;
+    height: auto;
+}
+.header1{
+    background: black;
+    padding-top: 0px;
+    height:100px;
+}
+.logo{
+    width: auto;
+    height: 550px;
+}
+.tren{
+    height: 100px;
+}
+.phandau {
+    background-color: black;
+    padding-bottom: 10px;
+    height: 50px;
+    width: 100%;
+    
+}

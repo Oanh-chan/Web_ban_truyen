@@ -1,0 +1,55 @@
+﻿@model DeAn.Models.Customer
+
+@{
+    ViewBag.Title = "FormLogin";
+    Layout = "~/Views/Shared/_Layoutlogin.cshtml";
+    <script src="https://aiax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+    <script src="https://aiax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+    <script src="https://aiax.aspnetcdn.com/ajax/jquery.validate/1.19.1/jquery.validate.js"></script>
+    <script src="https://aiax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.js"></script>
+    <link href="~/Content/login2.css" rel="stylesheet" />
+    <link href="~/Content/dangnhap0.css" rel="stylesheet" />
+
+}
+
+
+<div class="row" style="padding-left: 400px">
+    @using (Html.BeginForm("Authen", "Login"))
+    {
+        @Html.ValidationSummary(true)
+
+        <div class="col-sm-12 col-md-6">
+            <div class="col-inside-lg decor-info b-profile text-c" data-height-col="" style="height: 440px;">
+                <img src="~/images/viettelconet-2-1.png" alt="image" class="b-profile-avatar">
+                <div class="b-profile-name">
+                  ĐĂNG NHẬP
+                </div>
+                <div class="b-profile-profession">
+                    Thông tin đăng nhập
+                </div>
+                <div class="mb-6" style="padding-bottom: 10px;color:black">
+                    <label class="small mb-1" for="inputEmailAddress" style="padding-left:0px"> Email</label>
+                    <a style="padding-left:15px">@Html.TextBoxFor(m => m.EmailCus)  </a>
+                    <a>@Html.ValidationMessageFor(m => m.EmailCus)      </a>
+                </div>
+                <div class="mb-6" style="padding-bottom: 10px;color:black">
+                    <label class="small mb-1" for="inputEmailAddress" style="padding-left:0px">Mật khẩu</label>
+                    <a style="padding-left:15px"> @Html.PasswordFor(m => m.PassCus)    </a>
+                    <a>@Html.ValidationMessageFor(m => m.PassCus)  </a>
+                </div>
+              
+                    <label class="field-validation-error">
+                        @Html.DisplayFor(m => m.LoginErrorMessage)
+                    </label>
+
+
+               
+
+                <input class="btn btn-primary" type="submit" value="Đăng nhập" />
+                <input class="btn btn-primary" type="reset" value="Reset" />
+                <a class="btn btn-primary" href="@Url.Action("Register", "Login")"> Đăng ký</a>
+
+            </div>
+        </div>
+    }
+    </div>

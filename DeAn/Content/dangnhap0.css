@@ -1,0 +1,91 @@
+﻿body {
+    margin-top: 20px;
+}
+
+.col-inside-lg {
+    padding: 20px;
+}
+
+.b-profile {
+    padding-bottom: 20px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.b-profile-name {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.b-profile-avatar {
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 20px auto;
+    border-radius: 50%;
+}
+
+.b-profile-profession {
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    margin: 6px 0 12px;
+}
+
+.b-profile-share {
+    display: block;
+    text-align: center;
+    padding: 12px 0 24px;
+    margin: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.b-profile-share li {
+    display: inline-block;
+    margin: 0 8px;
+    overflow: hidden;
+}
+
+    .b-profile-share li a, .b-profile-share li a:hover {
+        font-size: 24px;
+        color: #fff;
+    }
+
+.b-profile .btn-follow-this {
+    font-size: 16px;
+    line-height: 34px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 0 40px;
+    text-transform: uppercase;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.m-b-md {
+    margin-bottom: 20px;
+}
+
+.text-c {
+    text-align: center;
+}
+
+.decor-success {
+    background-color: #46be8a;
+}
+
+.decor-warning {
+    background: #f2a654;
+}
+
+.decor-default {
+    background: #7266ba;
+}
+
+.decor-info {
+    background: #39bee8;
+}

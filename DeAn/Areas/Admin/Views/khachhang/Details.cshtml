@@ -1,0 +1,75 @@
+﻿@model DeAn.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_layoutadmin.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDCus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDCus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameCus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameCus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneCus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneCus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailCus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailCus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PassCus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PassCus)
+        </dd>
+
+        <dt>
+           
+        </dt>
+
+        <dd>
+           
+        </dd>
+
+        <dt>
+            
+        </dt>
+
+        <dd>
+            
+        </dd>
+
+    </dl>
+</div>
+<p>
+   
+    @Html.ActionLink("Trở về", "Index")
+</p>

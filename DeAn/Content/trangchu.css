@@ -1,0 +1,47 @@
+﻿body {
+    margin: 0;
+}
+
+/*master layout*/
+#div-top {
+    height: 100px;
+    width: 100%;
+    background-color: #516c9f;
+}
+
+#div-main {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    font-size: small;
+}
+
+#div-left {
+    width: auto;
+    height: auto;
+    font-family: Arial;
+    font-size: small;
+}
+
+    #div-left h3 {
+        text-align: center;
+    }
+
+#div-containt {
+    width: 100%;
+    height: 100%;
+    background-color: antiquewhite;
+}
+
+#div-footer {
+    height: 50px;
+    width: 100%;
+    background-color: burlywood;
+    bottom: 0px;
+}
+
+    #div-footer p {
+        text-align: center;
+        left: 50%;
+        padding-top: 15px;
+    }

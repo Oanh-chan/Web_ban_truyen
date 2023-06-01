@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DeAn.Models.Customer>
+
+@{
+    ViewBag.Title = "Index1";
+    Layout = "~/Views/Shared/_TheloaiLayoutPage1.cshtml";
+}
+
+<h2>Khách Hàng</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Register")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDCus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameCus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneCus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailCus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PassCus)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDCus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameCus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneCus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailCus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassCus)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

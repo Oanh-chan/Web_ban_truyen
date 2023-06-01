@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
+    <link href="~/Content/layout01.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="~/Content/hinh.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/footer.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/Thanhtimkiem.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a class="active0" href="~/Home/TrangChuchinh" style="width:300px; font-size: 30px;text-align:center">Hamster</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--Hiện email đã đăng nhập-->
+                        <li style="color:white; padding-top:20px;font-size:30px;padding-right:20px">@Session["EmailCus"].ToString()</li>
+                        <!--Giỏ hàng-->
+                        <li><a href="~/Cart/ShowToCart" data-tip="Add to Cart"><i class="fa fa-shopping-cart " style="font-size:38px; padding-bottom: 10px"> @Html.Action("BagCart", "Cart")</i></a></li>
+
+                        <!--Đăng xuất-->
+                        <li><a href="@Url.Action("Logout", "Login")"><span class="glyphicon glyphicon-log-out" style="font-size:35px"></span> Đăng Xuất</a></li>
+
+
+                    </ul>
+
+                </div>
+            </div>
+
+        </nav>
+
+        <div class="container-fluid body-content">
+            <div class="row">
+                <div class="col-md-2" style=" background-color:lightblue;min-height:600px">
+                    @{ Html.RenderAction("CategoryPartial", "CT");}
+                </div>
+                <div class="col-md-10" id="div-containt">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="padding-bottom:0px">
+        <footer class="footer-distributed">
+
+            <div class="footer-left">
+
+                <a class="active0" href="~/Home/TrangChu0" style="width:300px; font-size: 60px;text-align:center;height:30px">Hamster</a>
+
+
+
+                <p class="footer-company-name">&copy; @DateTime.Now.Year Hamster</p>
+            </div>
+
+            <div class="footer-center">
+
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>Trường Đại Học Ngoại Ngữ Tin Học TPHCM</span> 828 Sư Vạn Hạnh, Quận 10, TPHCM</p>
+                </div>
+
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+1.555.555.5555</p>
+                </div>
+
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:support@company.com">hamster@gmail.com</a></p>
+                </div>
+
+            </div>
+
+            <div class="footer-right">
+
+                <p class="footer-company-about">
+                    <span>Lưu ý</span>
+                    Mọi thông tin và hình ảnh trên website đều được sưu tầm trên Internet, chúng tôi không sở hữu hay chịu trách nhiệm bất kì thông tin nào trên website này. Nếu làm ảnh hưởng đến cá nhân hay tổ chức nào, khi được yêu cầu, chúng tôi sẽ xem xét và gỡ bỏ ngay lập tức.
+                </p>
+
+                <div class="footer-icons">
+
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-github"></i></a>
+
+                </div>
+
+            </div>
+
+        </footer>
+    </div>
+</body>
+</html>

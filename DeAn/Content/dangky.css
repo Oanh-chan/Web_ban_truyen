@@ -1,0 +1,16 @@
+﻿body{
+
+}
+.field-validation-error{
+    color:red;
+}
+#form-register{
+    text-align: center;
+    position: absolute;
+    top:30%;
+    left:40%;
+    
+    border: 1px solid #ccc;
+    padding: 10px 10px;
+    align-content:center;
+}
